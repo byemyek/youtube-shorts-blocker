@@ -1,0 +1,12 @@
+# VSCode
+.vscode/
+
+# macOS system files
+.DS_Store
+
+# Build or distribution files
+*.zip
+
+# Node modules (если будут)
+node_modules/
+

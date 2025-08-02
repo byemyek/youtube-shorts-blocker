@@ -21,7 +21,18 @@ chrome.storage.local.get({ enabled: true }, prefs => {
       const c = link.closest('style-scope ytd-guide-section-renderer') || link;
       c.style.display = 'none';
     });
-    
+  
+
+    // now mobile logic
+    if (location.host === 'm.youtube.com') {
+      document.querySelectorAll('ytm-pivot-bar-item-renderer').forEach(item => {
+      // looking for the "Shorts" in the text
+        if (item.innerText.trim() === 'Shorts') {item.style.display = 'none';}
+      });
+      // hiding Shorts in the menu
+      document.querySelectorAll('div.pivot-bar-item-tab.pivot-shorts').forEach(el => {el.style.display = 'none';});
+    }
+
     //if we are not on the main
     if (location.pathname !== '/') return;
 

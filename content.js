@@ -29,8 +29,9 @@ chrome.storage.local.get({ enabled: true }, prefs => {
       // looking for the "Shorts" in the text
         if (item.innerText.trim() === 'Shorts') {item.style.display = 'none';}
       });
-      // hiding Shorts in the menu
-      document.querySelectorAll('div.pivot-bar-item-tab.pivot-shorts').forEach(el => {el.style.display = 'none';});
+      
+      document.querySelectorAll('ytm-rich-section-renderer.rich-section-single-column')
+        .forEach(el => el.style.display = 'none');
     }
 
     //if we are not on the main
